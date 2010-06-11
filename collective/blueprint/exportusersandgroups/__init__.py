@@ -17,7 +17,6 @@ class ExportUsers(Source):
         memberdata_tool = getToolByName(self.context, 'portal_memberdata')
 
         properties = ['username','_password'] + memberdata_tool.propertyIds()
-
         membership=getToolByName(self.context, 'portal_membership')
         passwdlist=self.context.acl_users.source_users._user_passwords
 
@@ -27,12 +26,20 @@ class ExportUsers(Source):
 
         for memberId in membership.listMemberIds():
             item = {}
+            member = membership.getMemberById(memberId)
             for property in properties:
-                if property == 'member_id':
+                if property == 'username':
                    item[item_key('username')] = memberId
-                elif property == 'password':
+                elif property == '_password':
                    item[item_key('_password')] = passwdlist[memberId]
                 else:
-                   member = membership.getMemberById(memberId)
                    item[item_key(property)] = member.getProperty(property)
+            #setting global roles
+            item['roles'] = member.getRoles()
             yield item
+
+
+class ImportRoles(object):
+    
+    self.context.acl_users.userFolderEditUser('giorgio', None, [i for i in giorgio.getRoles()] + ['Manager'])
+    

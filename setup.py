@@ -3,7 +3,7 @@ import os
 
 version = '0.1'
 
-setup(name='collective.blueprint.exportusersandgoups',
+setup(name='collective.blueprint.exportusersandgroups',
       version=version,
       description="export users and groups from Plone site",
       long_description=open("README.txt").read() + "\n" +
