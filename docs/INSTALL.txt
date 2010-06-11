@@ -1,8 +1,8 @@
-collective.blueprint.exportusersandgoups Installation
+collective.blueprint.exportusersandgroups Installation
 =======================
 
  * When you're reading this you have probably already run
-   ``easy_install collective.blueprint.exportusersandgoups``. Find out how to install setuptools
+   ``easy_install collective.blueprint.exportusersandgroups``. Find out how to install setuptools
    (and EasyInstall) here:
    http://peak.telecommunity.com/DevCenter/EasyInstall
 
@@ -12,24 +12,24 @@ collective.blueprint.exportusersandgoups Installation
 
    into your Zope instance.
 
- * Create a file called ``collective.blueprint.exportusersandgoups-configure.zcml`` in the
+ * Create a file called ``collective.blueprint.exportusersandgroups-configure.zcml`` in the
    ``/path/to/instance/etc/package-includes`` directory.  The file
    should only contain this::
 
-       <include package="collective.blueprint.exportusersandgoups" />
+       <include package="collective.blueprint.exportusersandgroups" />
 
 .. _pythonproducts: http://plone.org/products/pythonproducts
 
 Alternatively, if you are using zc.buildout and the plone.recipe.zope2instance
 recipe to manage your project, you can do this:
 
- * Add ``collective.blueprint.exportusersandgoups`` to the list of eggs to install, e.g.:
+ * Add ``collective.blueprint.exportusersandgroups`` to the list of eggs to install, e.g.:
 
     [buildout]
     ...
     eggs =
         ...
-        collective.blueprint.exportusersandgoups
+        collective.blueprint.exportusersandgroups
 
   * Tell the plone.recipe.zope2instance recipe to install a ZCML slug:
 
@@ -37,7 +37,7 @@ recipe to manage your project, you can do this:
     recipe = plone.recipe.zope2instance
     ...
     zcml =
-        collective.blueprint.exportusersandgoups
+        collective.blueprint.exportusersandgroups
 
   * Re-run buildout, e.g. with:
 
