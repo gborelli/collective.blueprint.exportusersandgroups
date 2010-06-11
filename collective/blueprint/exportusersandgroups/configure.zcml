@@ -10,9 +10,9 @@
     name="collective.blueprint.exportusers"
     />
 
-<!--     <utility
+    <utility
       component="collective.blueprint.exportusersandgroups.ExportGroups"
       name="collective.blueprint.exportgroups"
-      /> -->
+      />
 
 </configure>
